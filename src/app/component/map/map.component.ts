@@ -55,12 +55,12 @@ export class MapComponent implements OnInit {
           this.lng = position.coords.longitude;
           //mover centro del mapa y marcador a la nueva posicion
           this.map.setCenter(new google.maps.LatLng(this.lat, this.lng));
-          this.marker.setPosition(new google.maps.LatLng(this.lat, this.lng))
+          this.marker.setPosition(new google.maps.LatLng(this.lat, this.lng));
         });
         //negada peticion, dejarlo en la posicion por defecto
     }else {
       //console.log("User not allow")
-
+      
     }
    }
 }
