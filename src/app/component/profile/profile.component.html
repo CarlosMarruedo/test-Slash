@@ -2,18 +2,34 @@
 
 </div>
 
-<div class="content">
+<div class="form-horizontal" class="content" >
+    <form [formGroup]="form">
+        <div class="row">
 
-    <div class="row">
-        <div class="column">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required> 
-         </div>
-         <div class="column">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <div class="column" [ngClass]="displayFieldCss('username')">
+
+                <label for="username" class="control-label required">Username</label><br>
+                <input type="text" id="name" class="form-control" formControlName="username"> <br>
+                <app-field-error-display [displayError]="isFieldValid('username')" errorMsg="Username is required">
+                </app-field-error-display>
+            </div>
+            <div class="column" [ngClass]="displayFieldCss('email')">
+
+                <label for="email" class="control-label required">Email</label><br>
+                <input type="text" id="email" class="form-control" formControlName="email"><br>
+                <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Email is required">
+                </app-field-error-display>
+            </div>
         </div>
-    </div>
-    
 
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+
+        <label for="bio">Bio</label><br>
+        <textarea id="username" name="username">  </textarea>  
+
+        <br>
+        <button  class="btn btn-primary" (click)="onSubmit()">Save</button>
+    </form>
 </div>
