@@ -56,7 +56,7 @@ export class MapComponent implements OnInit {
      this.marker.setMap(this.map);
      this.moverToCurrentLoc();
    }
-
+  //funcion para la geolocalizacion y mover la vista a esa posicion
    moverToCurrentLoc(){
     //preguntar o mirar si tienes permiso para la geolocalizacion
     if (navigator.geolocation) {
@@ -74,7 +74,7 @@ export class MapComponent implements OnInit {
         //negada peticion, dejarlo en la posicion por defecto
     }else {
       //console.log("User not allow")
-      
+      this.map.setCenter(new google.maps.LatLng(this.lat, this.lng));
     }
    }
 }
