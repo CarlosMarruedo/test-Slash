@@ -14,8 +14,18 @@
     clear: both;
   }
   /*Si la pantalla es muy pequeña, pone las dos columnas seguidas, en vez de a los lados */
-  @media screen and (max-width: 1200px) {
+  @media only screen and (max-width: 700px) {
     .column {
       width: 100%;
+      border: 1px solid;
+      margin: 20px;
+    }
+    .row{
+      display:block;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
     }
   }
