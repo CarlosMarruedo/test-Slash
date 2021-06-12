@@ -21,15 +21,18 @@
                 </app-field-error-display>
             </div>
         </div>
-
-        <label for="gender">Gender</label><br>
-        <input type="radio" name="gender" value="male"> Male<br>
-        <input type="radio" name="gender" value="female"> Female<br>
-
-        <label for="bio">Bio</label><br>
-        <textarea id="username" name="username">  </textarea>  
-
+        <div class="form-content" >
+            <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" value="male"> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+        </div>
+        <div class="form-content" >
+            <label for="bio">Bio</label><br>
+            <textarea id="username" name="username">  </textarea>  
+        </div>
         <br>
-        <button  class="btn btn-primary" (click)="onSubmit()">Save</button>
+        <div class="form-content" >
+            <button  class="btn" (click)="onSubmit()">Save</button>
+        </div>
     </form>
 </div>

@@ -5,4 +5,5 @@
     color: white;
     font-size: 30px;
     position: static;
+    overflow: visible;
   }
