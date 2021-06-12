@@ -33,10 +33,20 @@ export class MapComponent implements OnInit {
      position: this.coordinates,
      map: this.map,
    });
+   
 
+   infowindow = new google.maps.InfoWindow({
+    content: "<p><b>Lat:</b> <a>" + this.lat+"</a> </p>" + 
+    "<p><b>Lng:</b> " +this.lng + "</p>"
+  })
+  
    //llamar la inicializacion del mapa despues de que se haya cargado el componente
    ngAfterViewInit() {
      this.mapInitializer();
+     //vincular infowindow con el marcador
+     this.marker.addListener("click", () => {
+      this.infowindow.open(this.map, this.marker);
+    });
    }
    //funcion para inicializar el mapa y guardarlo en las variables del componente
    mapInitializer() {
@@ -46,6 +56,7 @@ export class MapComponent implements OnInit {
      this.marker.setMap(this.map);
      this.moverToCurrentLoc();
    }
+
    moverToCurrentLoc(){
     //preguntar o mirar si tienes permiso para la geolocalizacion
     if (navigator.geolocation) {
@@ -56,6 +67,9 @@ export class MapComponent implements OnInit {
           //mover centro del mapa y marcador a la nueva posicion
           this.map.setCenter(new google.maps.LatLng(this.lat, this.lng));
           this.marker.setPosition(new google.maps.LatLng(this.lat, this.lng));
+          //cambiar infowindow a la nueva posicion
+          this.infowindow.setContent("<p><b>Lat:</b> <a>" + this.lat+"</a> </p>" + 
+          "<p><b>Lng:</b> " +this.lng + "</p>" );
         });
         //negada peticion, dejarlo en la posicion por defecto
     }else {
