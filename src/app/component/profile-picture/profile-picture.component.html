@@ -1,9 +1,9 @@
 <label class="hoverable" for="fileInput">
-    <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+    <img [src]="url ? url : '../../../assets/Sample_User_Icon.png'"> 
     <div class="hover-text" *ngIf="!url">Choose file</div>
     <div class="background" *ngIf="!url"></div>
-    <div class="hover image" *ngIf="url"><img src="../../../assets/clipart945737.png"></div>
-  </label>
-  <br/>
-  <input id="fileInput" type='file' (change)="onSelectFile($event)">
+    <div class="hover image" *ngIf="url"><img class="pencil-image" src="../../../assets/pencil-xxl.png"></div>
+</label>
+<br/>
+<input id="fileInput" type='file' (change)="onSelectFile($event)">
   

@@ -1,10 +1,8 @@
 .banner{
     background-color: coral;
-    height: 130px;
-}
-
-.content{
+    height: 230px;
     
+    text-align: -webkit-center;
 }
 
 label{
@@ -40,7 +38,7 @@ input[type=text] {
 
 .row{
     display: flex;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 /* Clear floats after the columns */
 .row:after {
@@ -64,4 +62,8 @@ textarea{
     display: inline-block;
     font-size: 16px;
     float: right;
+}
+app-profile-picture{
+    position: relative;
+    top: 40%;
 }
