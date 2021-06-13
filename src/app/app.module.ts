@@ -7,6 +7,7 @@ import { MapComponent } from './component/map/map.component';
 import { HeaderComponent } from './component/header/header.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { FieldErrorDisplayComponent } from './component/field-error-display/field-error-display.component';
+import { ProfilePictureComponent } from './component/profile-picture/profile-picture.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FieldErrorDisplayComponent } from './component/field-error-display/fiel
     MapComponent,
     HeaderComponent,
     ProfileComponent,
-    FieldErrorDisplayComponent
+    FieldErrorDisplayComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,
